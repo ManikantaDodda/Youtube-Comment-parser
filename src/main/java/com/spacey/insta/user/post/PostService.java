@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spacey.insta.exception.UserNotFoundException;
+import com.spacey.insta.response.StatusResponse;
 import com.spacey.insta.user.UserRepository;
 
 @Service
@@ -28,5 +29,10 @@ public class PostService {
 			return postRepository.findByUsername(username);
 		else
 			throw new UserNotFoundException("fetching posts require a valid username");
+	}
+
+	public StatusResponse upvotePost(Long pid) {
+		postRepository.updateUpvotes(pid);
+		return new StatusResponse("success");
 	}
 }
