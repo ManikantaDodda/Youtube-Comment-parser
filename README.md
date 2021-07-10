@@ -11,6 +11,7 @@ Get the profile of a user on Social Media Platform
 
 Response Code 200 : Expected response should be of the form
 
+```json
 {
     "username": "", ?------------ string
     "followers": ["A", "B, "C], ?------------ string array of usernames that follow the user (empty by default)
@@ -24,10 +25,13 @@ Response Code 200 : Expected response should be of the form
     }
     ] ?------------ array of objects that contains details regarding a post (empty list by default)
 }
+```
 
 Response Code 404 (failure) : Expected response should be of the form:
 
+```json
 {} ?--------- empty body
+```
 
 **Create a User Account**
 
@@ -36,22 +40,28 @@ Add a user to the platform
 
 The expected request should be of the form
 
+```json
 {
     "username": "", ?--------- string (should be unique)
 }
+```
 
 Response Code 201 : Expected response should be of the form containing following fields
 
+```json
 {
     "username" : "" , ?---------- string
 }
+```
 
 Response Code 400 (failure) : Expected response should be of the form:
 
+```json
 {
     "status": "failure", ?--------- string
     "reason": "explanation" ?--------- string (explanation can be any message)
 }
+```
 
 **Follow a user**
 
@@ -60,16 +70,20 @@ Send a follow request from usernameA -> usernameB
 
 Response code 202 : Expected response should be of the form:
 
+```json
 {
     "status": "success" ?--------- string
 }
+```
 
 Response code 400 (failure) : Expected response should be of the form:
 
+```json
 {
     "status":"failure",
     "reason":"explanation" ?--------- explanation can be any message
 }
+```
 
 **Add a social media post**
 
@@ -78,26 +92,32 @@ Post something on the social media platform
 
 The expected request should be of the form
 
+```json
 {
     "caption": "", ?--------- string
     "imageUrl": "" ?--------- string (required)
 }
+```
 
 Response Code 201 : Expected response should be of the form
 
+```json
 {
     "postId": , ?--------- Integer
     "imageUrl": "", ?--------- String
     "caption": "", ?--------- String
     "upvotes": 0 ?--------- Integer (must be zero by default)
 }
+```
 
 Response Code 400 (failure) : Expected response should be of the form:
 
+```json
 {
     "status":"failure",
     "reason":"explanation" ?--------- explanation can be any message
 }
+```
 
 **Get Posts**
 
@@ -106,6 +126,7 @@ Get the list of posts added by the people whom usernameA is following
 
 Response Code 200 : Expected response should be of the form
 
+```json
 [
     {
     "postId": , ?--------- Integer
@@ -115,14 +136,19 @@ Response Code 200 : Expected response should be of the form
     },
     {...}
 ]
+```
 
 Response should be of the form in case of an empty list
 
+```json
 []
+```
 
 Response Code 400 (failure) : Expected response should be of the form:
 
+```json
 {
     "status":"failure",
     "reason":"explanation" ?--------- explanation can be any message
 }
+```
