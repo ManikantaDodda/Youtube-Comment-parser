@@ -14,7 +14,7 @@ Response Code 200 : Expected response should be of the form
 ```json
 {
     "username": "", ?------------ string
-    "followers": ["A", "B, "C], ?------------ string array of usernames that follow the user (empty by default)
+    "followers": ["A", "B, "C"], ?------------ string array of usernames that follow the user (empty by default)
     "following": ["B", "A"], ?------------ string array of usernames that user follows (empty by default)
     "posts": [
     {
