@@ -7,6 +7,7 @@ Design and Develop APIs for a Social Media (e.g. Instagram). Below contract you 
 ## **Fetch a User Profile**
 
 Get the profile of a user on Social Media Platform
+
 *GET* /api/get-user/:username
 
 Response Code 200 : Expected response should be of the form
@@ -36,6 +37,7 @@ Response Code 404 (failure) : Expected response should be of the form:
 ## **Create a User Account**
 
 Add a user to the platform
+
 *POST* /api/create-user/
 
 The expected request should be of the form
@@ -66,6 +68,7 @@ Response Code 400 (failure) : Expected response should be of the form:
 ## **Follow a user**
 
 Send a follow request from usernameA -> usernameB
+
 *POST* /api/follow/:usernameA/:usernameB
 
 Response code 202 : Expected response should be of the form:
@@ -88,6 +91,7 @@ Response code 400 (failure) : Expected response should be of the form:
 ## **Add a social media post**
 
 Post something on the social media platform
+
 *POST* /api/create-post/:username
 
 The expected request should be of the form
@@ -122,6 +126,7 @@ Response Code 400 (failure) : Expected response should be of the form:
 ## **Get Posts**
 
 Get the list of posts added by the people whom usernameA is following
+
 *GET* /api/all-posts/:usernameA
 
 Response Code 200 : Expected response should be of the form
